@@ -57,13 +57,23 @@ body {
     text-decoration: none;
 }
 
-.logo {
+.logo-menu{
     display: flex;
     align-items: center;
 }
 
-.logo img {
+.logo-menu img {
     width: 150px;
+    height: 130px;
+}
+
+.logo-footer{
+    display: flex
+    align-items: center;
+}
+
+.logo-footer img {
+    width: 180px;
     height: 130px;
 }
 
@@ -80,13 +90,13 @@ body {
 
 /*contenedor de columnas y cuadros*/
 .lista-sabores {
-    margin: 30px 0;
+    margin: 0px;
     /*que quede un cachito para abajo y arriba*/
     display: flex;
     justify-content: center;
     align-items: flex-start;
     position: relative;
-    z-index: 0;
+    z-index: 1;
 }
 
 /*contenedor de columnas*/
@@ -103,9 +113,9 @@ body {
     width: 100%;
     /*cuanto queremos que los cuadros cupen de ancho de columnas*/
     height: auto;
-    padding: 60px;
     border-radius: 6px;
     margin-top: 20px;
+    padding: 30px 3px;
 }
 
 /*estilo de lista*/
@@ -117,8 +127,10 @@ body {
 .cuadro-sabores ul li {
     position: relative;
     cursor: pointer;
-    padding: 4px 2px;
+    padding: 8px 2px;
     text-align: center;
+    font-size: 17px;
+    margin-bottom: 2px;
 }
 
 /*texto sabores*/
@@ -131,8 +143,8 @@ body {
 .cuadro-sabores li span {
     width: 100%;
     display: inline-block;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 15px;
+    line-height: 15px;
 }
 
 /*texto encabezado de logo*/
@@ -144,45 +156,27 @@ h2 {
 .sabores h4 {
     text-align: center;
     width: 100%;
-    font-family: 'Oswald', sans-serif;
+    margin-top: 35px;
     font-size: 60px;
-    font-weight: 300;
-    margin-bottom: 30px;
-    margin-top: 25px;
-}
-
-.logo-sabores-izquierda{
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 20%;
-    max-width: 320px;
-}
-
-.logo-sabores-derecha{
-    position: absolute;
-    top: 30px;
-    right: 0;
-    width: 20%;
-    max-width: 320px;
-}
-
-.logo-sabores-1{
-    width: 20%;
-}
-
-.logo-sabores-2{
-    width: 20%;
-    max-width: 320px
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(70, 71, 70);
 }
 
 /*titulo de cuadros*/
 .cuadro-sabores h6 {
-    font-size: 30px;
-    line-height: 35px;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: calc(1.5em + 1.5vw);
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    text-shadow: 2px 2px 5px rgb(70, 71, 70);
+}
+
+.linea {
+    background-color: #9932CC;
+    width: 50%;
+    height: 4px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+    margin-top: 5px;
 }
 
 .icono {
@@ -204,7 +198,7 @@ footer {
 }
 
 footer div {
-    margin: 0 50px;
+    margin: 0 30px;
     display: flex;
     font-family: 'Merienda', cursive;
     font-weight: bold;
@@ -233,14 +227,13 @@ footer a:hover {
     display: none;
     width: 240px;
     /*ajusta el ancho del toltip al 100% del texto*/
-    background-color: rgb(92, 88, 88);
+    text-shadow: 1px 1px 80px rgb(70, 71, 70);
     text-align: center;
     padding: 5px 0px;
     border-radius: 6px;
-    position: absolute;
+    position: abslute;
     z-index: 1;
-    top: -5px;
-    left: 105%;
+    top: 100%;
 }
 
 .tooltip:hover .tooltip-text {
@@ -261,7 +254,6 @@ footer a:hover {
 .texto-dropdown {
     display: none;
     z-index: 1;
-    background-color: aliceblue;
 }
 
 .dropdown {
@@ -275,13 +267,7 @@ footer a:hover {
     }
 
     .menu ul {
-        list-style: none;
-        overflow: hidden;
-        padding: 10px;
-    }
-
-    .menu ul li {
-        display: inline-block;
+        align-items: center;
     }
 
     .menu {
@@ -292,28 +278,33 @@ footer a:hover {
         width: auto;
     }
 
+    nav {
+        display: none;
+    }
 
+    .dropdown:hover .texto-dropdown {
+        display: block;
+        align-items: center;
+    }
+
+    .menu ul {
+        width: 97%;
+        text-align: center;
+        margin-right: 3px;
+    }
+
+    .menu li a {
+        padding: 0px 10px;
+    }
 }
 
 @media screen and (max-width: 850px) {
-
-    .menu {
-        flex-direction: column;
-    }
 
     .lista-sabores {
         flex-direction: column;
         width: 80%;
         max-width: 500px;
         margin: auto;
-    }
-
-    .dropdown:hover .texto-dropdown {
-        display: block;
-    }
-
-    .menu ul {
-        display: none;
     }
 
     .col-sabores {
@@ -326,6 +317,11 @@ footer a:hover {
         margin-top: 20px;
     }
 
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
     footer {
         flex-direction: column;
     }
@@ -333,21 +329,12 @@ footer a:hover {
 
 @media screen and (max-width: 560px) {
 
-    /*intertan que el menu quede como columna para despues hacer desplegable*/
-    .menu li a {
-        padding: 10px 10px;
-    }
-
-    .menu ul li {
-        display: block;
-    }
-
-    nav {
-        text-align: center;
-    }
-
     .sabores h4 {
         padding: 10px;
+    }
+
+    .cuadro-sabores {
+        padding: 30px 5px;
     }
 
     footer {
