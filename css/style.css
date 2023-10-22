@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
 body {
 
     background-image: linear-gradient(319deg, #bbff99 0%, #ffec99 37%, #ff9999 100%);
@@ -5,31 +13,30 @@ body {
 
 }
 
+/*
 ::-webkit-scrollbar {
     background-color: transparent;
     width: 0px;
     height: 0px;
 }
 
-
+*/
 
 .barra {
     grid-area: barra;
     text-align: center;
     font-family: 'Merienda', cursive;
-    width: 1000px;
+    width: 40%;
     padding: 25px;
-    margin-left: 550px;
-    font-size: 20px;
-    margin-top: -70px;
+    margin-top: 15px;
+    margin-left: 30%;
+
 
 }
 
 .barra div {
     display: inline-block;
     justify-content: space-between;
-    margin-left: 50px;
-    margin-right: 50px;
 
 }
 
@@ -43,27 +50,27 @@ ul {
     color: #9932CC;
     white-space: nowrap;
     text-decoration: none;
-
+    font-size: 0.9rem;
 }
 
 
 
 .sucursales {
-    grid-area: sucursales;
-    margin-left: 30px;
+
+    margin-left: 40px;
 
 }
 
 .quienes {
-    grid-area: quienes;
-    margin-left: 30px;
+
+    margin-left: 40px;
 
 }
 
 
 .pedidos {
-    grid-area: pedidos;
 
+    margin-left: 50px;
 
 }
 
@@ -89,16 +96,17 @@ ul {
     text-decoration: none;
 }
 
-.nav2 a{
+.nav2 a {
     text-decoration: none;
 }
+
 .nav2 {
     margin-left: 600px;
     display: flex;
     gap: 50px;
     font-weight: bold;
     color: #9932CC;
-    font-size: 20px;
+  font-size: 0.9rem;
 
 }
 
@@ -127,21 +135,9 @@ ul {
     grid-area: encabezado;
 }
 
-.cremas {
-    grid-area: cremas;
-    margin-left: 400px;
-    margin-top: -500px;
-    font-family: 'Merienda', cursive;
-
-}
-
-.cremas ul {
-    margin-left: -280px;
-    color: #8333FF;
-    font-weight: bold;
 
 
-}
+
 
 .cremas li:hover {
     color: orange;
@@ -167,168 +163,249 @@ ul {
 
 }
 
-.cremas h3 {
-    margin-left: -230px;
-    color: #8333FF;
-    font-weight: bold;
 
-
-}
-
-.ddl {
-    grid-area: ddl;
-    margin-left: 90px;
-    margin-top: -500px;
-    font-family: 'Merienda', cursive;
-
-}
-
-.ddl ul {
-    margin-left: -50px;
-    color: #8333FF;
-    font-weight: bold;
-
-}
-
-.choco {
-    grid-area: choco;
-    margin-left: 150px;
-    margin-right: 30px;
-    margin-top: -550px;
-    font-family: 'Merienda', cursive;
-}
-
-
-.choco ul {
-    margin-left: -90px;
-    color: #8333FF;
-    font-weight: bold;
-}
-
-.choco h3 {
-    color: #8333FF;
-    font-weight: bold;
-    margin-left: -60px;
-
-}
-
-.agua ul {
-    color: #8333FF;
-    font-weight: bold;
-
-}
-
-.ddl h3 {
-    color: #8333FF;
-    font-weight: bold;
-
-
-}
-
-.agua {
-    grid-area: agua;
-    margin-left: 550px;
-    margin-top: -550px;
-    font-family: 'Merienda', cursive;
-}
-
-.agua h3 {
-    color: #8333FF;
-    font-weight: bold;
-    margin-left: -10px;
-    margin-right: -50px;
-
-
-}
 
 .historia h3 {
 
-    margin-left: 190px;
+    margin-left: 230px;
     font-family: 'Berkshire Swash', cursive;
     font-family: 'Merienda', cursive;
     font-family: 'Trochut', cursive;
-    font-size: 70px;
+    font-size: calc(1.5em + 1.5vw);
     margin-top: 50px;
 }
 
 .historia p {
 
-    margin-left: 130px;
-    width: 70%;
+    margin: 25px;
     text-align: justify;
     font-family: 'Merienda', cursive;
-    font-size: 20px;
+    font-size: 1.15rem;
     margin-top: -30px;
+    height: 26vmax;
+    width: 50vmax;
 
 }
 
 
 .historia {
-    grid-area: historia;
-    margin-top: 50px;
+    grid-area: historia;    
     background-color: #bbff99;
-    width: 70%;
-    margin-left: -220px;
+    height: 30vmax;
+    width: 55vmax;
+    margin-left: 2px;
+    box-sizing: border-box;
+    margin-right:120px;
+    margin-top: -70px;
 
 }
 
+/*contenedor padre de lista de sabores*/
+.titulosabores {
+    height: auto;
+    /*para que se ajuste el alto de todo*/
+    position: relative;
+    width: 100%;
+    padding: 5px 0px;
+    /*para tapar el aujero que deja para arriba y para abajo el height auto*/
+    grid-area: titulosabores;
+}
+
+/*contenedor de columnas y cuadros*/
+.lista-sabores {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    grid-area: lista-sabores;
+    width: 90%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/*contenedor de columnas*/
+.col-sabores {
+    width: 15%;
+    /*ancho de cada columna*/
+    margin: 0 10px;
+    /*distancia entre colemna y columna*/
+    grid-area: col-sabores;
+}
+
+/*cuadro de sabores*/
+.cuadro-sabores {
+    width: 90%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: -700px;    
+
+}
+
+div.cuadro-sabores{
+    width: 50vh;
+    height: auto;
+    
+}
+
+/*estilo de lista*/
+.cuadro-sabores ul {
+    margin-top: 30px;
+    
+    list-style: none;
+}
+
+/*cuadro de texto de lista*/
+.cuadro-sabores ul li {
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 200px;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    font-family: Merienda, cursive;
+    color: #9932CC;
+    font-weight: bold;
+
+}
+
+/*texto sabores*/
+.cuadro-sabores li a {
+    text-decoration: none;
+}
+
+.cuadro-sabores li:hover {
+    color: orangered;
+}
+
+/*tooltip cuadrado*/
+.cuadro-sabores li span {
+    width: 100%;
+    display: inline-block;
+    font-size: 0.5rem;
+    line-height: 15px;
+
+}
+
+.sabores h4 {
+    text-align: center;
+    width: 100%;
+    margin-top: 35px;
+    font-size: 3rem;
+    text-align: center;
+
+}
+
+.cuadro-sabores h3 {
+    font-weight: bold;
+    font-size: calc(1.2em + 1vw);
+    text-align: center;
+    color: #9932CC;
+    margin-top: -100px;
+    margin-left: 200px;
+
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    display: none;
+    width: 240px;
+    /*ajusta el ancho del toltip al 100% del texto*/
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 6px;
+    position: abslute;
+    z-index: 1;
+    top: 100%;
+}
+
+.tooltip:hover .tooltip-text {
+    display: block;
+}
+
+
 .titulosabores {
     grid-area: titulosabores;
-
+margin-top: -60px;
 
 }
 
 
 .titulosabores h2 {
-    text-align: center;
-    margin-top: 40px;
-    margin-left: 120px;
+    text-align: center;   
+    margin-left: 100px;
     font-family: 'Berkshire Swash', cursive;
     font-family: 'Merienda', cursive;
     font-family: 'Trochut', cursive;
-    font-size: 70px;
+    font-size: 3.5rem;
     color: orange;
 }
 
 
+.iconotacc {
+    position: absolute;
+    left: -28px;
+    height: 14px;
+    top: 5px;
+    overflow: clip;
+}
+
+
+
+
 .index {
-    grid-area: index;
+
     padding-top: 30px;
-    width: 130px;
-    height: 120px;
+    width: 15%;
+    height: 5%;
     padding-block-end: 50px;
 }
 
 
 .imgsabor2 {
     grid-area: imgsabor2;
-    margin-top: 100px;
-    margin-left: 350px;
+    margin-top: -10%;
+    margin-left: 60%;
 
 }
 
 .imgsabor2 img {
-    margin-left: -100px;
+   
     transform: rotate(-30deg);
     opacity: .5;
-    width: 700px;
-    height: 600px;
+    width: 40vw;
+    height: 35vw;
 }
 
 .imgsabor1 {
     grid-area: imgsabor1;
-
-    margin-top: 100px;
+    margin-right: 2%;
+    margin-top: 1%;
 
 
 }
 
 .imgsabor1 img {
-    width: 500px;
-    height: 500px;
+    width: 30vw;
+    height: 30vw;
     transform: rotate(30deg);
     opacity: .5;
 }
+
+
+
+.contenedor-sabores {
+    grid-area: contenedor-sabores;
+}
+
+
 
 .carousel1 {
     width: 100vw;
@@ -392,7 +469,7 @@ ul {
     width: 35vw;
     padding: 40px;
     overflow: hidden;
-    margin-top: 90px;
+    margin-top: -30px;
 }
 
 
@@ -451,22 +528,22 @@ ul {
 }
 
 
-
-
 .contenedor-grid {
-
+    width: 100%;
+    height: auto;
     overflow: hidden;
     display: grid;
     grid-template-areas:
         "encabezado encabezado encabezado encabezado"
-        "imgsabor1 titulosabores titulosabores imgsabor2"
-        "agua cremas choco ddl"
+        "contenedor-sabores contenedor-sabores contenedor-sabores contenedor-sabores"
+        "contenedor-sabores contenedor-sabores contenedor-sabores contenedor-sabores"
         "carousel2 carousel2 historia historia"
         "footer footer footer footer"
-
-
     ;
+}
 
+<<<<<<< HEAD
+=======
 }
 /* DESDE ACA COMIENZA QUIENES SOMOS DE BURON*/
 /*Estilos de Pedidos On-line*/
@@ -628,3 +705,221 @@ form {
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/*Estilos de consultas*/
+
+@keyframes slide-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100px);
+    }
+  }
+
+@keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  .contenedor-contacto,{ 
+	  margin-top: 20px;
+	  margin-right: 40px;
+	  display: flexbox;
+	  font-family: 'Franklin Gothic Medium',  Arial, sans-serif;
+	  color: #8333FF;
+	  border-radius: 10px;
+	  padding: 10px;
+	  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+	  }
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input-com {
+	margin: 0%;
+	height: 450px;
+	width: 720px;
+}
+
+.formulario__input-com:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+	transition: .1s ease all;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 40px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label  {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado  {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input  {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+}
+
+/*----HASTA ACA, LOS ESTILOS DE CONSULTAS---/*
+>>>>>>> add082fba834a7a92a2bd26c4f697ea1eeb4eac7
