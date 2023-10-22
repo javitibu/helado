@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="Es">
 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" Content="IE=edge">
@@ -15,68 +16,133 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
+<header class="encabezado">
 
-<body>
-    <header class="encabezado">
 
-        <div class="titulo1">
-            <div class="index"><a href="../index.html"><img src="../img/logo__1_-removebg-preview.png" alt class="logo" width="150" height="130" >
-            </div>
+    <div class="index"><a href="/helado-main/index.html"><img src="/helado-main/img/logo-removebg-preview.png" alt class="logo" width="250px"
+          height="200px">
+    </div>
 
-            <nav class="barra">
 
-                <div class="sabores"> <a href="../pages/sabores.html">Sabores</a></div>
-                <div class="sucursales"> <a href="../pages/sucursales.html">Sucursales</a></div>
-                <div class="quienes"> <a href="../pages/quienessomos.html">Quienes somos</a></div>
-                <div class="pedidos"> <a href="../pages/pedidos.html">Pedidos Online</a></div>
+    <nav class="barra">
 
-        </div>
-        </nav>
+      <div class="sabores"> <a href="/helado-main/pages/sabores.html">Sabores</a></div>
+      <div class="sucursales"> <a href="/helado-main/pages/sucursales.html">Sucursales</a></div>
+      <div class="quienes"> <a href="/helado-main/pages/">Quienes somos</a></div>
+      <div class="pedidos"> <a href="/helado-main/pages/pedidos.html">Pedidos Online</a></div>
+
+    </nav>
+<br><br><br>
+
 
     </header>
 
+
+<link rel="stylesheet" href="/helado-main/css/estilosform.css">
+<div class="contenedor-contacto">
     <h1>Contacto</h1>
-
     <h2>Si tenes alguna consulta o sugerencia, completá este formulario, y nos contactamos con vos a la brevedad</h2>
+</div> 
 
-    <form action="/procesar.php" method="POST">
-        <label for="input1">Nombre</label>
-        <input type=" text" name="nombre" id="input1" placeholder="Nombre en mayúsculas" size="10" >
-        <br><br>
-        <label for="input2">Apellido</label>
-        <input type=" text" name="ape" id="input2" placeholder="Apellido en mayúsculas" Size="25" maxlength="20">
-        <br><br>
-        <label for="email1">Correo</label>
-        <input type="email" name="correo" id="email1">
-        <br><br>
-        <label for="telefono">Telefono</label>
-        <input type="number" name="Tel" id="telefono">
-        <br><br>
-        <input type="radio" name="provincia" id="radio1" value="1">
-        <label for="radio1">CABA</label>
-        <br>
-        <input type="radio" name="provincia" id="radio2" value="2">
-        <label for="radio2">Gran Buenos Aires</label>
-        <br>
-        <input type="radio" name="provincia" id="radio3" value="3">
-        <label for="radio3">Otro</label>
-        <br><br>
-        <label for="com">Comentario</label>
-        <br><br>
-        <textarea name="Comentario" id="com" cols="30" rows="10"></textarea>
-        <br><br>
-        <input type="checkbox" name="acepto" id="Acepta">
-        <label for="Acepta">Acepto las bases y condiciones.</label>
-        <br><br>
-        <div class="g-recaptcha" data-sitekey="6LcTYUYoAAAAAIOUz6V9UA8mDNnNNNzkkwFG_Bmg">
+<body>
+	<main>
+		<form action="" class="formulario" id="formulario">
+			<!-- Grupo: Apellido -->
+			<div class="formulario__grupo" id="grupo__apellido">
+				<label for="apellido" class="formulario__label">Apellido</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Perez">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El Apellido tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+			</div>
 
+			<!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El Nombre tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+			</div>
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Correo Electrónico</label>
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
 
-        </div>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar Formulario">
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label for="telefono" class="formulario__label">Teléfono</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+			</div>
 
-    </form>
+			<!-- Grupo: comentario -->
+			<div class="formulario__grupo" id="grupo__comentario">
+				<label for="comentario" class="formulario__label">Comentario</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input-com" name="comentario" id="comentario"  placeholder="Escribí acá tu comentario">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El comentario no esta completo</p>
+			</div>
+			<!-- Grupo: Terminos y Condiciones -->
+			<div class="formulario__grupo" id="grupo__terminos">
+				<label class="formulario__label">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+					Declaro que mis datos son correctos y validables
+				</label>
+			</div>
+			<!-- Grupo: No soy un robot -->
+			<div class="formulario__grupo" id="grupo__gcaptcha">
+				<label class="formulario__label">
+					<div class="g-recaptcha" data-sitekey="6LcTYUYoAAAAAIOUz6V9UA8mDNnNNNzkkwFG_Bmg"></div>
+				</label>
+
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn">Enviar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Muchisimas gracias por tu comentario!!!</p>
+			</div>
+
+		</form>
+	</main>
+
+	<script src="/helado-main/formulario.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
+<footer class="footer">
+
+
+
+    <div class="nav2">
+      <div><a href="/helado-main/pages/trabajanosotros.html">Trabaja con nosotros</a></div>
+      <div><a href="/helado-main/pages/consultas.html">Consultas</a></div>
+
+    </div>
+
+    <div class="icono-footer">
+      <div><a href="https://www.facebook.com/heladosdaniel/?fref=ts"><span class="fab fa-facebook"></span> </a>
+      </div>
+      <div><a href="https://www.instagram.com/danielhelados/"><span class="fab fa-instagram"></span> </a></div>
+      <div><a href="https://twitter.com/heladosdaniel"><span class="fab fa-twitter"></span> </a></div>
+    </div>
+  </footer>
 </html>
