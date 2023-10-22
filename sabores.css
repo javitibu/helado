@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(319deg, #bbff99 0%, #ffec99 37%, #ff9999 100%);
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+}
+
+/*encabezado*/
+.menu {
+    display: flex;
+    min-height: 70px;
+    justify-content: space-evenly;
+    /*se puede cambiar para modificar entre otras cosas distancia y posicionamiento de los elementos*/
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    font-family: 'Merienda', oblique;
+    font-size: 20px;
+    grid-area: menu;
+}
+
+.menu ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 20px 0px;
+}
+
+.menu li a {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    margin: 20px;
+    /*subiendo esto le puedo dar mas espacion*/
+    text-decoration: none;
+    color: #9932CC;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.logo-menu{
+    display: flex;
+    align-items: center;
+}
+
+.logo-menu img {
+    width: 150px;
+    height: 130px;
+}
+
+.logo-footer{
+    display: flex
+    align-items: center;
+}
+
+.logo-footer img {
+    width: 180px;
+    height: 130px;
+}
+
+/*contenedor padre de lista de sabores*/
+.sabores {
+    height: auto;
+    /*para que se ajuste el alto de todo*/
+    position: relative;
+    width: 100%;
+    padding: 5px 0px;
+    /*para tapar el aujero que deja para arriba y para abajo el height auto*/
+    grid-area: sabores;
+}
+
+/*contenedor de columnas y cuadros*/
+.lista-sabores {
+    margin: 0px;
+    /*que quede un cachito para abajo y arriba*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+/*contenedor de columnas*/
+.col-sabores {
+    width: 28%;
+    /*ancho de cada columna*/
+    margin: 0 20px;
+    /*distancia entre colemna y columna*/
+    grid-area: col-sabores;
+}
+
+/*cuadro de sabores*/
+.cuadro-sabores {
+    width: 100%;
+    /*cuanto queremos que los cuadros cupen de ancho de columnas*/
+    height: auto;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 30px 3px;
+}
+
+/*estilo de lista*/
+.cuadro-sabores ul {
+    list-style: none;
+}
+
+/*cuadro de texto de lista*/
+.cuadro-sabores ul li {
+    position: relative;
+    cursor: pointer;
+    padding: 8px 2px;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+/*texto sabores*/
+.cuadro-sabores li a {
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*tooltip cuadrado*/
+.cuadro-sabores li span {
+    width: 100%;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+/*texto encabezado de logo*/
+h2 {
+    color: #9932CC;
+}
+
+/*titulo de sabores de helados*/
+.sabores h4 {
+    text-align: center;
+    width: 100%;
+    margin-top: 35px;
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(70, 71, 70);
+}
+
+/*titulo de cuadros*/
+.cuadro-sabores h6 {
+    font-weight: bold;
+    font-size: calc(1.5em + 1.5vw);
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(70, 71, 70);
+}
+
+.linea {
+    background-color: #9932CC;
+    width: 50%;
+    height: 4px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.icono {
+    position: absolute;
+    left: -28px;
+    height: 14px;
+    top: 5px;
+    overflow: clip;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+}
+
+footer div {
+    margin: 0 30px;
+    display: flex;
+    font-family: 'Merienda', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #9932CC;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.icono-footer {
+    gap: 20px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    display: none;
+    width: 240px;
+    /*ajusta el ancho del toltip al 100% del texto*/
+    text-shadow: 1px 1px 80px rgb(70, 71, 70);
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 6px;
+    position: abslute;
+    z-index: 1;
+    top: 100%;
+}
+
+.tooltip:hover .tooltip-text {
+    display: block;
+}
+
+.contenedor {
+    overflow-x: hidden;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "menu"
+        "sabores"
+        "footer";
+}
+
+.texto-dropdown {
+    display: none;
+    z-index: 1;
+}
+
+.dropdown {
+    position: relative;
+}
+
+@media screen and (max-width: 1210px) {
+
+    .menu ul li {
+        margin: 0px;
+    }
+
+    .menu ul {
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .logo a {
+        width: auto;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .dropdown:hover .texto-dropdown {
+        display: block;
+        align-items: center;
+    }
+
+    .menu ul {
+        width: 97%;
+        text-align: center;
+        margin-right: 3px;
+    }
+
+    .menu li a {
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .lista-sabores {
+        flex-direction: column;
+        width: 80%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .col-sabores {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .cuadro-sabores {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 560px) {
+
+    .sabores h4 {
+        padding: 10px;
+    }
+
+    .cuadro-sabores {
+        padding: 30px 5px;
+    }
+
+    footer {
+        padding: 20px 0;
+        padding-bottom: 30px;
+    }
+}
