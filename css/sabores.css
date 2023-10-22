@@ -24,7 +24,7 @@ body {
     padding: 10px;
     position: relative;
     font-family: 'Merienda', oblique;
-    font-size: 20px;
+    font-size: 0.9rem;
     grid-area: menu;
 }
 
@@ -202,7 +202,7 @@ footer div {
     display: flex;
     font-family: 'Merienda', cursive;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 0.9rem;
 }
 
 footer a {
