@@ -17,6 +17,7 @@
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
+
 <body>
     <header class="encabezado">
 
@@ -35,4 +36,47 @@
         </nav>
 
     </header>
+
+    <h1>Contacto</h1>
+
+    <h2>Si tenes alguna consulta o sugerencia, completá este formulario, y nos contactamos con vos a la brevedad</h2>
+
+    <form action="/procesar.php" method="POST">
+        <label for="input1">Nombre</label>
+        <input type=" text" name="nombre" id="input1" placeholder="Nombre en mayúsculas" size="10" >
+        <br><br>
+        <label for="input2">Apellido</label>
+        <input type=" text" name="ape" id="input2" placeholder="Apellido en mayúsculas" Size="25" maxlength="20">
+        <br><br>
+        <label for="email1">Correo</label>
+        <input type="email" name="correo" id="email1">
+        <br><br>
+        <label for="telefono">Telefono</label>
+        <input type="number" name="Tel" id="telefono">
+        <br><br>
+        <input type="radio" name="provincia" id="radio1" value="1">
+        <label for="radio1">CABA</label>
+        <br>
+        <input type="radio" name="provincia" id="radio2" value="2">
+        <label for="radio2">Gran Buenos Aires</label>
+        <br>
+        <input type="radio" name="provincia" id="radio3" value="3">
+        <label for="radio3">Otro</label>
+        <br><br>
+        <label for="com">Comentario</label>
+        <br><br>
+        <textarea name="Comentario" id="com" cols="30" rows="10"></textarea>
+        <br><br>
+        <input type="checkbox" name="acepto" id="Acepta">
+        <label for="Acepta">Acepto las bases y condiciones.</label>
+        <br><br>
+        <div class="g-recaptcha" data-sitekey="6LcTYUYoAAAAAIOUz6V9UA8mDNnNNNzkkwFG_Bmg">
+
+
+        </div>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar Formulario">
+
+    </form>
 </body>
+</html>

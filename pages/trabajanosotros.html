@@ -36,4 +36,49 @@
         </nav>
 
     </header>
+    
+    <h1>Trabajá con Nosotros</h1>
+
+    <h4>Muchas gracias por interesarte en ser parte de nuestro equipo. Dejanos tus datos, tu CV y te contactaremos a la brevedad</h4>
+
+    <form action="/procesar.php" method="POST" enctype="multipart/form-data">
+        <label for="input1">Nombre</label>
+        <input type=" text" name="nombre" id="input1" placeholder="Nombre en mayúsculas" size="10" >
+        <br><br>
+        <label for="input2">Apellido</label>
+        <input type=" text" name="ape" id="input2" placeholder="Apellido en mayúsculas" Size="25" maxlength="20">
+        <br><br>
+        <label for="email1">Correo</label>
+        <input type="email" name="correo" id="email1">
+        <br><br>
+        <label for="edad">Edad</label>
+        <input type="number" name="miedad" id="edad" min="18" max="65">
+        <br><br>
+        
+            <h6>Zona donde podes trabajar</h6>
+        <input type="radio" name="provincia" id="radio1" value="1">
+        <label for="radio1">CABA</label>
+        <br>
+        <input type="radio" name="provincia" id="radio2" value="2">
+        <label for="radio2">Gran Buenos Aires</label>
+        <br>
+        <input type="radio" name="provincia" id="radio3" value="3">
+        <label for="radio3">Otro</label>
+        <br><br>
+        <label for="com">Contanos algo de vos</label>
+        <br><br>
+        <textarea name="Comentario" id="com" size="200"></textarea>
+        <br><br>
+        <div>
+            <label for="CV"> Cargá tu CV:</label>
+            <Input type="file" name="Cargá tu CV" id="CV">
+        </div>
+        <input type="checkbox" name="acepto" id="Acepta">
+        <label for="Acepta">Acepto las bases y condiciones.</label>
+        <br><br>
+        <div class="g-recaptcha" data-sitekey="6LeEQUcoAAAAAAq3idIcmLrFxc4RrRBwK30-obuT"></div>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar Formulario">
+    </form>
 </body>
+</html>

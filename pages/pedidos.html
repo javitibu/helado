@@ -1,38 +1,242 @@
 <!DOCTYPE html>
-<html lang="Es">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" Content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Grupo 5 Helados</title>
     <link rel="icon" href="../img/icono.JPG">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Pedidos On-line de Helados</title>
+    <script>
+        // Función para validar que solo se ingresen letras en el campo de entrada
+        function validarLetras(input) {
+            var letras = /^[A-Za-zñÑ ]+$/; 
+            if (!input.value.match(letras)) {
+                alert("Ingresa solo letras.");
+                input.value = "";
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <header class="encabezado">
-
-        <div class="titulo1">
-            <div class="index"><a href="../index.html"><img src="../img/logo__1_-removebg-preview.png" alt class="logo" width="150" height="130" >
-            </div>
-
-            <nav class="barra">
-
-                <div class="sabores"> <a href="../pages/sabores.html">Sabores</a></div>
-                <div class="sucursales"> <a href="../pages/sucursales.html">Sucursales</a></div>
-                <div class="quienes"> <a href="../pages/quienessomos.html">Quienes somos</a></div>
-                
-
-        </div>
-        </nav>
-
+    <nav class="navbar navbara-expand-lg navbar-light ">
+        <a href="../index.html">
+            <img class="logo" src="../img/logo grupo 5.png" alt="logo-grupo" width="180" height="150">
+        </a>
+        <ul class="lista">
+            <li><a  href="/"><i>Inicio</i></a></li>
+            <li><a href="../pages/sabores.html" target="_blank"><i> Sabores </i></a></li>
+            <li><a href="../pages/sucursales.html" target="_blank"><i> Sucursales </i></a></li>
+            <li><a href="../pages/quienessomos.html" target="_blank"><i> Nosotros </i></a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>¡Haga su pedido en línea!...</h1>
     </header>
+    <br><br>
+    <main>
+        <section class="pedido">
+            <h2>Seleccione los sabores (3 máximo):</h2><br><br>
+            <form action="procesar_pedido.php" method="post">
+                <label for="sabor1">Sabor 1:</label>
+                <select name="sabor1" id="sabor1">
+                    <option value="chocolate">Chocolate</option>
+                    <option value="chocolate1">Chocolate C/ Almendras</option>
+                    <option value="chocolate2">Chocolate C/ Pasas</option>
+                    <option value="chocolate3">Chocolate Suizo</option>
+                    <option value="chocolate4">Chocolate Nevado</option>
+                    <option value="chocolate5">Chocolate Amargo</option>
+                    <option value="chocolate6">Chocolate Blanco</option>
+                    <option value="ddl">Dulce de leche Natural</option>
+                    <option value="ddl1">Dulce de leche Granizado</option>
+                    <option value="ddl2">Dulce de leche Natural con Nueces</option>
+                    <option value="ddl3">Dulce de leche Relleno</option>
+                    <option value="ddl4">Dulce de leche Tentación</option>
+                    <option value="ddl5">Dulce de leche Marroc</option>
+                    <option value="agua">Frutilla al agua</option>
+                    <option value="agua1">Limón al agua</option>
+                    <option value="agua2">Naranja al agua</option>
+                    <option value="agua3">Melón al agua</option>
+                    <option value="agua4">Ananá al agua</option>
+                    <option value="agua5">Limón con Cerezas al agua</option>
+                    <option value="agua6">Durazno al agua</option>
+                    <option value="agua7">Frambuesa al agua</option>
+                    <option value="agua8">Manzana al agua</option>
+                    <option value="iris">Arco Iris</option>
+                    <option value="crema">Crema Chantilly</option>
+                    <option value="crema1">Crema Flan</option>
+                    <option value="crema2">Crema Chantilly</option>
+                    <option value="crema3">Crema del Cielo</option>
+                    <option value="crema4">Crema a la Reina</option>
+                    <option value="crema5">Crema Italia</option>
+                    <option value="crema6">Menta Granizada</option>
+                    <option value="crema7">Frutilla a la Crema</option>
+                    <option value="crema8">Banana a la Crema</option>
+                    <option value="crema9">Bananita Dolca</option>
+                    <option value="higo">Higos al Cognac</option>
+                    <option value="cereza">Cereza a la Panna</option>
+                    <option value="coco">Coco</option>
+                    <option value="vainilla">Vainilla</option>
+                </select>
+                <label for="sabor2">Sabor 2:</label>
+                <select name="sabor2" id="sabor2">
+                    <option value="ss">Sin sabor extra</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="chocolate1">Chocolate C/ Almendras</option>
+                    <option value="chocolate2">Chocolate C/ Pasas</option>
+                    <option value="chocolate3">Chocolate Suizo</option>
+                    <option value="chocolate4">Chocolate Nevado</option>
+                    <option value="chocolate5">Chocolate Amargo</option>
+                    <option value="chocolate6">Chocolate Blanco</option>
+                    <option value="ddl">Dulce de leche Natural</option>
+                    <option value="ddl1">Dulce de leche Granizado</option>
+                    <option value="ddl2">Dulce de leche Natural con Nueces</option>
+                    <option value="ddl3">Dulce de leche Relleno</option>
+                    <option value="ddl4">Dulce de leche Tentación</option>
+                    <option value="ddl5">Dulce de leche Marroc</option>
+                    <option value="agua">Frutilla al agua</option>
+                    <option value="agua1">Limón al agua</option>
+                    <option value="agua2">Naranja al agua</option>
+                    <option value="agua3">Melón al agua</option>
+                    <option value="agua4">Ananá al agua</option>
+                    <option value="agua5">Limón con Cerezas al agua</option>
+                    <option value="agua6">Durazno al agua</option>
+                    <option value="agua7">Frambuesa al agua</option>
+                    <option value="agua8">Manzana al agua</option>
+                    <option value="iris">Arco Iris</option>
+                    <option value="crema">Crema Chantilly</option>
+                    <option value="crema1">Crema Flan</option>
+                    <option value="crema2">Crema Chantilly</option>
+                    <option value="crema3">Crema del Cielo</option>
+                    <option value="crema4">Crema a la Reina</option>
+                    <option value="crema5">Crema Italia</option>
+                    <option value="crema6">Menta Granizada</option>
+                    <option value="crema7">Frutilla a la Crema</option>
+                    <option value="crema8">Banana a la Crema</option>
+                    <option value="crema9">Bananita Dolca</option>
+                    <option value="higo">Higos al Cognac</option>
+                    <option value="cereza">Cereza a la Panna</option>
+                    <option value="coco">Coco</option>
+                    <option value="vainilla">Vainilla</option>
+                </select>
+                <label for="sabor3">Sabor 3:</label>
+                <select name="sabor3" id="sabor3">
+                    <option value="ss">Sin sabor extra</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="chocolate1">Chocolate C/ Almendras</option>
+                    <option value="chocolate2">Chocolate C/ Pasas</option>
+                    <option value="chocolate3">Chocolate Suizo</option>
+                    <option value="chocolate4">Chocolate Nevado</option>
+                    <option value="chocolate5">Chocolate Amargo</option>
+                    <option value="chocolate6">Chocolate Blanco</option>
+                    <option value="ddl">Dulce de leche Natural</option>
+                    <option value="ddl1">Dulce de leche Granizado</option>
+                    <option value="ddl2">Dulce de leche Natural con Nueces</option>
+                    <option value="ddl3">Dulce de leche Relleno</option>
+                    <option value="ddl4">Dulce de leche Tentación</option>
+                    <option value="ddl5">Dulce de leche Marroc</option>
+                    <option value="agua">Frutilla al agua</option>
+                    <option value="agua1">Limón al agua</option>
+                    <option value="agua2">Naranja al agua</option>
+                    <option value="agua3">Melón al agua</option>
+                    <option value="agua4">Ananá al agua</option>
+                    <option value="agua5">Limón con Cerezas al agua</option>
+                    <option value="agua6">Durazno al agua</option>
+                    <option value="agua7">Frambuesa al agua</option>
+                    <option value="agua8">Manzana al agua</option>
+                    <option value="iris">Arco Iris</option>
+                    <option value="crema">Crema Chantilly</option>
+                    <option value="crema1">Crema Flan</option>
+                    <option value="crema2">Crema Chantilly</option>
+                    <option value="crema3">Crema del Cielo</option>
+                    <option value="crema4">Crema a la Reina</option>
+                    <option value="crema5">Crema Italia</option>
+                    <option value="crema6">Menta Granizada</option>
+                    <option value="crema7">Frutilla a la Crema</option>
+                    <option value="crema8">Banana a la Crema</option>
+                    <option value="crema9">Bananita Dolca</option>
+                    <option value="higo">Higos al Cognac</option>
+                    <option value="cereza">Cereza a la Panna</option>
+                    <option value="coco">Coco</option>
+                    <option value="vainilla">Vainilla</option>
+                </select>
+                <br><br>
+                <label for="tamaño"><h3>Tamaño:</h3></label><br><br>
+                <input type="radio" name="tamaño" value="pequeño" id="pequeño">
+                <label for="pequeño">Pequeño (1/4kg) </label>
+                <input type="radio" name="tamaño" value="mediano" id="mediano">
+                <label for="mediano">Mediano (1/2kg)</label>
+                <input type="radio" name="tamaño" value="grande" id="grande">
+                <label for="grande">Grande (1kg)</label>
+                <br><br>
+                <label for="toppings"><h4>Toppings (se pueden seleccionar múltiples):</h4></label><br><br>
+                <input type="checkbox" name="toppings[]" value="salsa1" id="salsa1">
+                <label for="salsa1">Salsa de Chocolate </label>
+                <input type="checkbox" name="toppings[]" value="salsa2" id="salsa2">
+                <label for="salsa2">Salsa de Durazno</label>
+                <input type="checkbox" name="toppings[]" value="salsa3" id="salsa3">
+                <label for="salsa3">Salsa de Dulce de Leche </label>
+                <input type="checkbox" name="toppings[]" value="salsa4" id="salsa4">
+                <label for="salsa4">Salsa de Frambuesa </label>
+                <input type="checkbox" name="toppings[]" value="chocolate" id="chocolate">
+                <label for="chocolate">Chocolate </label>
+                <input type="checkbox" name="toppings[]" value="nueces" id="nueces">
+                <label for="nueces">Nueces </label>
+                <input type="checkbox" name="toppings[]" value="rocklets" id="rocklets">
+                <label for="rocklets">Rocklets </label>
+                <input type="checkbox" name="toppings[]" value="gomitas" id="gomitas">
+                <label for="gomitas">Gomitas </label>
+                <br><br><br>
+                <h3>Dejanos tus datos:</h3>
+                <br>
+                <label for="nombre">Nombre:</label>
+                <input type="" name="nombre" id="nombre" oninput="validarLetras(this)" placeholder="nombre" required>
+                <label for="apellido">Apellido:</label>
+                <input type="" name="apellido" id="apellido" oninput="validarLetras(this)" placeholder="apellido" required>
+                <label for="tel">Teléfono: </label>
+                <input type="number" name="Teléfono" placeholder="tel" required>
+                <label for="direccion">Dirección de entrega:</label>
+                <input type="text" name="direccion" id="direccion" placeholder="dirección" required>
+                <br><br><br>
+                <input class= "btn" type="submit" value="Realizar Pedido Ahora!" id="realizarPedidoBtn">
+            </form>
+        </section>
+    </main>
+    <br><br><br><br><br><br>
+    <footer>
+        <h4>
+            © 2023 Grupo 5 Helados Artesanales...
+        </h4>        
+        <ul class="pie">
+            <li><a href="../pages/consultas.html" target="_blank">Consultas</a></li>
+            <li><a href="../pages/trabajanosotros.html" target="_blank">Trabaja con Nosotros!</a></li>
+        </ul>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var realizarPedidoBtn = document.getElementById('realizarPedidoBtn');
+            realizarPedidoBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                mostrarNotificacion('La operación fue exitosa!');
+            });
+            function mostrarNotificacion(mensaje) {
+                var notificacion = document.createElement('div');
+                notificacion.textContent = mensaje;
+                notificacion.className = 'notificacion';
+                document.body.appendChild(notificacion);        
+                setTimeout(function () {
+                    document.body.removeChild(notificacion);
+                }, 5000); // 5000 milisegundos (5 segundos)
+            }
+        });
+        </script>        
 </body>
+</html>

@@ -542,3 +542,384 @@ margin-top: -60px;
     ;
 }
 
+<<<<<<< HEAD
+=======
+}
+/* DESDE ACA COMIENZA QUIENES SOMOS DE BURON*/
+/*Estilos de Pedidos On-line*/
+
+.quienes-somos-completo{
+    font-family: 'Times New Roman', Times, serif;
+}
+.quienes_somos_titulo{
+    font-weight: bold;
+    font-size: calc(1.5em + 1.5vw);
+    text-align:center;
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px rgb(70, 71, 70);
+}
+.quienes-somos-oracion{
+    font-size: calc(1.2em + 1.2vw);
+    text-align:center;
+    text-shadow: 1px 1px 15px rgb(247, 247, 244);
+}
+
+.quienes-somos-parrafo {
+    display: flex;
+    margin:0 auto;
+    text-align: center;
+    font-size: calc(1.1em + 1.1vw);
+    max-width: 1000px;
+    }
+
+#img_quienes_somos{
+    width: 90vw;
+    min-width: 200px;
+    max-width: 1100px;
+    margin-bottom: -4PX;
+    }
+
+.contenedor-quienes-somos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-quienes-somos figure{
+    position:relative;
+    box-shadow: 0px 3px 30px rgb(26, 0, 119);
+    overflow: hidden;
+    border-radius: 6px;
+    cursor:auto
+}
+.contenedor-quienes-somos figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+.contenedor-quienes-somos figure .quienes_somos_img_capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,103,123,0.7);
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+.contenedor-quienes-somos figure:hover > .quienes_somos_img_capa{
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor-quienes-somos figure:hover > .quienes_somos_img_capa h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+.contenedor-quienes-somos figure .quienes_somos_img_capa h3{
+    color: #f3f70b;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 700ms ease-out;
+    margin-top: 20px;
+    font-size: calc(1.1em + 1vw);
+}
+.contenedor-quienes-somos figure .quienes_somos_img_capa p{
+    color: #f0f0ca;
+    font-size: calc(1.1em + 1vw);
+    line-height: 1.5;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto; 
+}
+
+.contenedor-quienes-somos figure:hover > img{
+    transform: scale(1.1);
+}
+
+/* HASTA ACA TERMINA QUIENES SOMOS DE BURON*/
+
+nav {
+    display: flex;
+    justify-content: space-between ;
+    border-radius: 0px 0px 20px 20px;
+}
+.lista {
+    display: flex;
+    margin-right: 25px;
+    margin-top: 90px;
+}
+.lista li{
+    margin-right: 20px;
+    list-style: none;
+}
+.lista li a{
+    text-decoration: none;
+    cursor: pointer;
+    color:blueviolet;
+    font-size: 30px;
+}
+.lista li a:hover{
+    color: burlywood;
+}
+h2 {
+    text-align: center;
+}
+label {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#realizarPedidoBtn {
+    font-size: 20px;
+    padding: 10px 20px;
+}
+#realizarPedidoBtn :hover{
+    color: burlywood;
+}
+.pie li a{
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color:blueviolet;
+}
+.pie li a:hover{
+    color: burlywood;
+}
+/* footer h4{
+    margin: 10px 0px 12px 10px;
+    text-align: center;
+    font-weight: 80;
+} */
+.notificacion {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*Estilos de consultas*/
+
+@keyframes slide-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100px);
+    }
+  }
+
+@keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  .contenedor-contacto,{ 
+	  margin-top: 20px;
+	  margin-right: 40px;
+	  display: flexbox;
+	  font-family: 'Franklin Gothic Medium',  Arial, sans-serif;
+	  color: #8333FF;
+	  border-radius: 10px;
+	  padding: 10px;
+	  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+	  }
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input-com {
+	margin: 0%;
+	height: 450px;
+	width: 720px;
+}
+
+.formulario__input-com:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+	transition: .1s ease all;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 40px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label  {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado  {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input  {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+}
+
+/*----HASTA ACA, LOS ESTILOS DE CONSULTAS---/*
+>>>>>>> add082fba834a7a92a2bd26c4f697ea1eeb4eac7
