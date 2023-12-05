@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+    <link rel="stylesheet" href="/helado-main/css/style.css">
+    <link rel="stylesheet" href="/helado-main/Front Corpo/estilos.css">
+<div class="contenedor-grid">
+
+    <header class="encabezado">
+
+
+      <div class="index"><img src="/helado-main/img/logo-removebg-preview.png" alt class="logo" width="150px"
+            height="150px">
+      </div>
+    
+
+<body>
+    <h1>Baja de Postulantes</h1>
+    <h3>-acceso Corporativo-</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th align="right">edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="Postulante in Postulantes">
+                <td>{{ Postulante.codigo }}</td>
+                <td>{{ Postulante.Apellido }}</td>
+                <td>{{ Postulante.Nombre }}</td>
+                <td align="right">{{ Postulante.edad }}</td>
+                <td><button @click="eliminarPostulante(Postulante.codigo)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="contenedor-centrado">
+        <a href="/helado-main/Front Corpo/index.html">Volver</a>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const URL = "http://127.0.0.1:5000/"
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    Postulantes: []
+                }
+            },
+            methods: {
+                obtenerPostulantes() {
+                    // Obtenemos el contenido del inventario
+                    fetch(URL + 'Postulantes')
+                        .then(response => {
+                             // Parseamos la respuesta JSON 
+                            if (response.ok) { return response.json();}
+                        })
+                        .then(data => {
+                            // El código Vue itera este elemento para generar la tabla
+                            this.Postulantes = data;
+                        })
+                        .catch(error => {
+                            console.log('Error:', error);
+                            alert('Error al obtener los Postulantes.');
+                        });
+                },
+                eliminarPostulante(codigo) {
+                    if (confirm('¿Estás seguro de que quieres eliminar este Postulante?')) {
+                        fetch(URL + `Postulantes/${codigo}`, { method: 'DELETE' })
+                            .then(response => {
+                                if (response.ok) {
+                                    this.Postulantes = this.Postulantes.filter(Postulante => Postulante.codigo !== codigo);
+                                    alert('Postulante eliminado correctamente.');
+                                }
+                            })
+                            .catch(error => {
+                                alert(error.message);
+                            });
+                    }
+                }
+            },
+            mounted() {
+                //Al cargar la página, obtenemos la lista de Postulantes
+                this.obtenerPostulantes();
+            }
+        });
+
+        app.mount('body');
+    </script>
+</body>
+</html>
