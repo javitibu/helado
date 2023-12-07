@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+
+    background-image: linear-gradient(319deg, #bbff99 0%, #ffec99 37%, #ff9999 100%);
+
+
+}
+
+.barra-sucursales {
+    grid-area: barra;
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    width: 40%;
+    padding: 20px;
+    margin-top: -30px;
+    margin-left: 30%;
+
+
+}
+
+.barra-sucursales div {
+    display: inline-block;
+     justify-content: space-between;
+
+}
+
+.barra-sucursales div a{
+    overflow: hidden;
+    font-weight: bold;
+    color: #9932CC;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding-left: 50px;
+}
