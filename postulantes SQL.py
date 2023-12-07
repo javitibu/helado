@@ -10,15 +10,16 @@ class Catalogo:
         
         self.cursor = self.conn.cursor(dictionary=True)
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS trabajanosotros (
-            codigo INT,
+            codigo INT AUTO_INCREMENT PRIMARY KEY,
             apellido VARCHAR(255) NOT NULL,
             nombre VARCHAR(255) NOT NULL,
             correo VARCHAR(255) NOT NULL,
             telefono INT NOT NULL,
             comentario VARCHAR(500) NOT NULL,
-            cv_url VARCHAR(255)NOT NULL,
+            cv_url VARCHAR(255) NOT NULL,
             edad INT NOT NULL
             )''')
+
         self.conn.commit()
 
     def agregar_postulante(self, codigo, apellido, nombre, correo, telefono, comentario, edad, CV):
@@ -103,16 +104,17 @@ catalogo = Catalogo(host='127.0.0.1', user='root', password='', database='trabaj
 #catalogo.agregar_postulante(4, 'Zamudio', 'Facundo', 'leandrojosearaujo@gmail.com', 1154853541,'Los sueños de mi vida son 1-Trabajar en esta empresa. 2-Ganar un mundial', 'CV_12345', 38)
 #catalogo.agregar_postulante(5, 'Sztejnberg', 'Delia Karina', 'ksztejnberg@gmail.com', 1154855450,'Holgazanear no es una opcion, dejar helado sin probar, tampoco', 'CV_123455093', 30)
 #catalogo.agregar_postulante(6,'Velazquez Fariña', 'Karen Romina', 'karenrovelaf@gmail.com',  445566677788,  'Helados y democracia', 26, 'CV_13141516')
+catalogo.agregar_postulante(8,'Araujo', 'Dante Leandro', 'karenrovelaf@gmail.com',  445566677788,  'Helados y democracia', 26, 'CV_13141516')
 
 # Consultamos un postulante y lo mostramos
-postulante = catalogo.consultar_postulante(1)
-if postulante:
-    print(f"Postulante encontrado: {postulante['apellido']}")
-else:
-    print("Postulante no encontrado.")
+#postulante = catalogo.consultar_postulante(1)
+#if postulante:
+    #print(f"Postulante encontrado: {postulante['apellido']}")
+#else:
+    #print("Postulante no encontrado.")
 
 # Modificamos un postulante y lo mostramos
-catalogo.modificar_postulante(1, 'Sztejnberg', 'Delia Karina', 'ksztejnberg@gmail.com', 1154855450,'Holgazanear no es una opcion, dejar helado sin probar, tampoco', 'CV_123455093', 30)
+#catalogo.modificar_postulante(1, 'Sztejnberg', 'Delia Karina', 'ksztejnberg@gmail.com', 1154855450,'Holgazanear no es una opcion, dejar helado sin probar, tampoco', 'CV_123455093', 30)
 #catalogo.modificar_postulante(4, 'Zamudio', 'Facundo', 'leandrojosearaujo@gmail.com', 1154853541,'Los sueños de mi vida son 1-Trabajar en esta empresa. 2-Ganar un mundial', 'CV_12345', 38)
 #catalogo.modificar_postulante(3, 'Buron', 'Javier Alejandro', 'javierburon@gmail.com', 55555000,  'Ya que tengo que montar guardia, prefiero montarla en una heladeria!', 'CV_999999', 29)
 
